@@ -12,3 +12,38 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.editor {
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    font-size: 22px;
+}
+
+.options button {
+    height: 30px;
+    width: 75px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 3px;
+    border: 0;
+    background: dodgerblue
+  }
+
+  div.DraftEditor-root {
+    height: 200px;
+    overflow-y: auto;
+    width: 120vh;
+  }
+
+  @media only screen and (max-width: 600px) {
+    div.DraftEditor-root {
+      width: 64vh;
+    }
+
+  }
+
+  div.DraftEditor-editorContainer,
+  div.public-DraftEditor-content {
+    height: 100%;
+  }

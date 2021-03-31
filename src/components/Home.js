@@ -1,7 +1,6 @@
 import React from 'react';
 import {Editor, EditorState, RichUtils, convertToRaw} from 'draft-js';
 import 'draft-js/dist/Draft.css';
-import './RichEditor.css';
 import './Home.css';
 
 function Home() {
@@ -35,6 +34,15 @@ function Home() {
       .join("\n");
 
     console.log(description);
+
+    const element = document.createElement("a");
+    const file = new Blob([description],    
+                {type: 'text/plain;charset=utf-8'});
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.txt";
+    document.body.appendChild(element);
+    element.click();
+    
   }
 
   return (
