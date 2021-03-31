@@ -1,0 +1,17 @@
+.editor {
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    font-size: 22px;
+
+}
+
+.options button {
+    height: 30px;
+    width: 75px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 3px;
+    border: 0;
+    background: dodgerblue
+  }
