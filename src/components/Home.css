@@ -1,35 +1,44 @@
 .title {
+  margin: 20px 0 10px 0;  
+  display: flex;
+  justify-content: center;
+}
+
+.todo-item {
+  list-style-type: none;
+  /* border: red solid; */
+  background-color: dodgerblue;
+  font-size: 1.5rem;
+  margin: 20px auto;
+  padding: .5rem;
+}
+
+.todo-item li {
+  color: whitesmoke;
+}
+
+ul h3 {
+  margin: 20px;
+  color: dodgerblue;
+}
+
+ul i {
+  color: dark;
+  cursor: pointer;
+}
+
+.todo-list {
+  /* border: red solid; */
+  text-align: center;
+}
+
+.add-todo {
+  /* border: red solid; */
+  text-align: center;
+}
+
+.add-todo-button {
+  /* border: green solid; */
+  text-align: center;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
-.saveButton {    
-  margin-top: 20px;
-}
-
-.editor {
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 5px;
-    font-size: 22px;
-}
-
-.options button {
-  height: 30px;
-  width: 75px;
-  border-radius: 5px;
-  color: #fff;
-  margin: 3px;
-  border: 0;
-  font-size: 16px;
-  background: dodgerblue
-}
-
-  div.DraftEditor-root {
-    height: 200px;
-    overflow-y: auto;    
-  }
-
-  div.DraftEditor-editorContainer,
-  div.public-DraftEditor-content {
-    height: 100%;
-  }

@@ -1,0 +1,27 @@
+.editor {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.options button {
+height: 30px;
+width: 75px;
+border-radius: 5px;
+color: #fff;
+margin: 3px;
+border: 0;
+font-size: 16px;
+background: dodgerblue
+}
+
+div.DraftEditor-root {
+  height: 200px;
+  overflow-y: auto;    
+}
+
+div.DraftEditor-editorContainer,
+div.public-DraftEditor-content {
+  height: 100%;
+}

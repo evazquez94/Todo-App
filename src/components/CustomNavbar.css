@@ -1,0 +1,16 @@
+.navbar-logo {
+  color: #242424;
+  justify-self: start;
+  /* margin-left: 20px; */
+  cursor: pointer;
+  text-decoration: none;  
+}
+
+.navbar-logo b {
+  font-size: 2rem;
+}
+
+.fa-battle-net {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+}
