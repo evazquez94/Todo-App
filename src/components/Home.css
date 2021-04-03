@@ -26,8 +26,7 @@
 
   div.DraftEditor-root {
     height: 200px;
-    overflow-y: auto;
-    /* width: 120vh; */
+    overflow-y: auto;    
   }
 
   div.DraftEditor-editorContainer,
