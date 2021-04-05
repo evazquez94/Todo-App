@@ -6,7 +6,6 @@
 
 .todo-item {
   list-style-type: none;
-  /* border: red solid; */
   background-color: dodgerblue;
   font-size: 1.5rem;
   margin: 20px auto;
@@ -27,18 +26,16 @@ ul i {
   cursor: pointer;
 }
 
-.todo-list {
-  /* border: red solid; */
+.todo-list {  
   text-align: center;
 }
 
-.add-todo {
-  /* border: red solid; */
-  text-align: center;
-}
-
-.add-todo-button {
-  /* border: green solid; */
-  text-align: center;
-  margin-top: 20px;
+.input[type=text] {
+  background-color: springgreen;
+  margin: 20px auto;
+  outline: none;
+  border: none;
+  padding: 0.7em;
+  color: black;
+  width: 100%;
 }
