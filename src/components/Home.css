@@ -21,8 +21,7 @@ ul h3 {
   color: dodgerblue;
 }
 
-ul i {
-  color: dark;
+ul i {  
   cursor: pointer;
 }
 
@@ -36,6 +35,21 @@ ul i {
   outline: none;
   border: none;
   padding: 0.7em;
-  color: black;
+  color: #242424;
   width: 100%;
+}
+
+.button {
+  border: none;
+  outline: none;
+  background-color: transparent
+  ;
+}
+
+.fa-check-circle {
+  color: whitesmoke;
+}
+
+.fa-trash-alt {
+  color: whitesmoke;
 }

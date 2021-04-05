@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Home.css";
 
-function Todo({ todo }) {
+function Todo({ todo, index, completeTodo }) {
   return (
     <div style={{ textDecoration: todo.completed ? "line-through" : "" }}>
       <Row className="todo-item">
@@ -13,12 +13,16 @@ function Todo({ todo }) {
         >
           <li>{todo.title}</li>
         </Col>
-        {/* <Col xs={6} sm={6} lg={1}>
-          <i className="far fa-edit" onClick={edit} />
+        <Col xs={6} sm={6} lg={1}>
+          <button className="button" onClick={() => completeTodo(index)}>
+            <i className="far fa-check-circle" />
+          </button>
         </Col>
         <Col xs={6} sm={6} lg={1}>
-          <i className="fas fa-trash" />
-        </Col> */}
+        <button className="button" onClick={() => completeTodo(index)}>
+          <i className="far fa-trash-alt" />
+        </button>
+        </Col>
       </Row>
     </div>
   );
@@ -56,7 +60,7 @@ function Home() {
     },
     {
       title: "Do exercises",
-      completed: true,
+      completed: false,
     },
   ]);
 
@@ -64,6 +68,13 @@ function Home() {
     const newTodo = [...todo, { title, completed: false }];
     setTodo(newTodo);
   };
+
+  const completeTodo = (index) => {
+    const newTodo = [...todo];
+    newTodo[index].completed = !newTodo[index].completed;
+    setTodo(newTodo);
+  };
+
 
   return (
     <>
@@ -77,7 +88,12 @@ function Home() {
             xs={{ span: 10, offset: 1 }}
           >
             {todo.map((todo, index) => (
-              <Todo todo={todo} index={index} key={index} />
+              <Todo
+                todo={todo}
+                index={index}
+                key={index}
+                completeTodo={completeTodo}                
+              />
             ))}
           </Col>
         </Row>
