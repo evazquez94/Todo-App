@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Home.css";
 
-function Todo({ todo, index, completeTodo }) {
+function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div style={{ textDecoration: todo.completed ? "line-through" : "" }}>
       <Row className="todo-item">
@@ -19,9 +19,9 @@ function Todo({ todo, index, completeTodo }) {
           </button>
         </Col>
         <Col xs={6} sm={6} lg={1}>
-        <button className="button" onClick={() => completeTodo(index)}>
-          <i className="far fa-trash-alt" />
-        </button>
+          <button className="button" onClick={() => removeTodo(index)}>
+            <i className="far fa-trash-alt" />
+          </button>
         </Col>
       </Row>
     </div>
@@ -63,24 +63,36 @@ function Home() {
       completed: false,
     },
   ]);
+  const [todoLeft, setTodoLeft] = React.useState(0);
 
-  const addTodo = (title) => {
+  React.useEffect(() => { 
+    setTodoLeft(todo.filter(todo => !todo.completed).length);  
+  });
+    
+  const addTodo = title => {
     const newTodo = [...todo, { title, completed: false }];
     setTodo(newTodo);
   };
 
-  const completeTodo = (index) => {
+  const completeTodo = index => {
     const newTodo = [...todo];
     newTodo[index].completed = !newTodo[index].completed;
     setTodo(newTodo);
   };
 
+  const removeTodo = index => {
+    const newTodo = [...todo];
+    newTodo.splice(index, 1);
+    setTodo(newTodo);
+  }
+
+  const title = "todo list";
 
   return (
     <>
       <Container>
-        <h1 className="title">TODO LIST</h1>
-
+        <h1 className="title">{title.toUpperCase()}</h1>
+        <h2 className="title">PENDING TASKS - {todoLeft}</h2>
         <Row>
           <Col
             className="todo-list"
@@ -92,7 +104,8 @@ function Home() {
                 todo={todo}
                 index={index}
                 key={index}
-                completeTodo={completeTodo}                
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
               />
             ))}
           </Col>
